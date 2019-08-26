@@ -1,0 +1,16 @@
+
+;<16 bytes of data are stored in 
+;memory location starting from 8850H
+; to 885FH.transfer the entire block 
+;of data bytes to new memory locations
+;staring from 8870H IN REVERSE ORDER>
+MVI B,10H
+LXI H,8850H
+LXI D,887FH
+MOV A,M
+STAX D
+INX H
+DCX D
+DCR B
+JNZ 4208H
+HLT
